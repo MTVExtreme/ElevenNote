@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace ElevenNote.Web.Controllers
 {
+    [Authorize]
     public class NoteController : Controller
     {
         public ActionResult Index()
