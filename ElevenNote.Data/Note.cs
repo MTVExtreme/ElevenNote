@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,9 @@ namespace ElevenNote.Data
         [Required]
 
         public string Content { get; set; }
+
+        [DefaultValue(false)]
+        public bool IsStarred { get; set; }
 
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }

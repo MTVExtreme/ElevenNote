@@ -49,6 +49,7 @@ namespace ElevenNote.Services
                                 new NoteListItem
                                 {
                                     NoteId = e.NoteId,
+                                    IsStarred = e.IsStarred,
                                     Title = e.Title,
                                     CreatedUtc = e.CreatedUtc
                                 }
