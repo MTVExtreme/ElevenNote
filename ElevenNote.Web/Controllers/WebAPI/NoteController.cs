@@ -27,8 +27,8 @@ namespace ElevenNote.Web.Controllers.WebAPI
                 {
                     NoteId = detail.NoteId,
                     Title = detail.Title,
-                    Content = detail.Content
-                    //TODO: 
+                    Content = detail.Content,
+                    IsStarred = newState
                 };
 
             //Return Value indicating whether the updated succeeded
