@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using ElevenNote.API.Models;
+using ElevenNote.Data;
 
 namespace ElevenNote.API
 {

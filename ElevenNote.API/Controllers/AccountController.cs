@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using ElevenNote.API.Models;
 using ElevenNote.API.Providers;
 using ElevenNote.API.Results;
+using ElevenNote.Data;
 
 namespace ElevenNote.API.Controllers
 {
