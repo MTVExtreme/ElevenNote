@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ElevenNote.MobileApp.ExternalServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +10,15 @@ namespace ElevenNote.MobileApp
 {
 	public partial class App : Application
 	{
+        /// <summary>
+        ///  Web Service Access
+        /// </summary>
+        internal static readonly NoteService NoteService = new NoteService();
 		public App ()
 		{
 			InitializeComponent();
 
-            this.MainPage = new NavigationPage(new NoteDetailPage());
+            this.MainPage = new NavigationPage(new LoginPage());
 		}
 
 		protected override void OnStart ()

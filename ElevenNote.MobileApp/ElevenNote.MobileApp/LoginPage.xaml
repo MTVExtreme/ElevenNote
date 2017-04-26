@@ -10,7 +10,7 @@
         <Entry Placeholder="email@domain.com" x:Name="fldUsername" Keyboard="Email" Margin="0,0,0,5" />
         <Label Text="Password:" Margin="0,0,0,2" />
         <Entry Placeholder="enter password" x:Name="fldPassword" IsPassword="True" Margin="0,0,0,5" />
-        <Button x:Name="btnLogin" Text="Log In" Margin="0,0,0,40"></Button>
+        <Button x:Name="btnLogin" Text="Log In" Margin="0,0,0,40" Clicked="btnLogin_Clicked"></Button>
         <ActivityIndicator x:Name="pleaseWait" IsRunning="False" />
     </StackLayout>
     
