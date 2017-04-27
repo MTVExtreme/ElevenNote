@@ -10,16 +10,16 @@ using Xamarin.Forms.Xaml;
 
 namespace ElevenNote.MobileApp
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class NotesPage : ContentPage
-	{
-        private List<NoteListItemViewModel> Notes { get; set; } 
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class NotesPage : ContentPage
+    {
+        private List<NoteListItemViewModel> Notes { get; set; }
 
-		public NotesPage ()
-		{
-			InitializeComponent ();
+        public NotesPage()
+        {
+            InitializeComponent();
             SetupUi();
-		}
+        }
 
         /// <summary>
         /// Sets up user Interface without making designer confused
@@ -34,6 +34,22 @@ namespace ElevenNote.MobileApp
                 lvwNotes.IsRefreshing = false;
                 lblNoNotes.IsVisible = !Notes.Any();
             };
+
+            //Add New Note icon to title bar.
+            this.ToolbarItems.Add(new ToolbarItem("Add", null, async () =>
+            {
+                await Navigation.PushAsync(new NoteDetailPage(null));
+            }));
+
+            this.ToolbarItems.Add(new ToolbarItem("Log Out", null, async () =>
+            {
+                if (await DisplayAlert("Well?", "Are you sure you want to quit back to the login screen?", "Yep", "Nope"))
+                {
+                    await Navigation.PopAsync(true);
+                }
+
+            }));
+
         }
 
         /// <summary>
@@ -68,5 +84,15 @@ namespace ElevenNote.MobileApp
         {
             await PopulateNotesList();
         }
+
+        private void Lvw_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem != null)
+            {
+                var note = e.SelectedItem as NoteListItemViewModel;
+                Navigation.PushAsync(new NoteDetailPage(note.NoteId));
+            }
+        }
+
     }
 }

@@ -7,7 +7,7 @@
              >
 
     <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" Margin="10">
-        <ListView x:Name="lvwNotes">
+        <ListView x:Name="lvwNotes" ItemSelected="Lvw_OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ImageCell ImageSource="{Binding StarImage}" Text="{Binding Title}" />
